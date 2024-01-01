@@ -1,22 +1,22 @@
 [package]
 name = "vectoreyes"
-authors.workspace = true
-edition.workspace = true
-license.workspace = true
-publish.workspace = true
-version.workspace = true
+authors = ["Alex J. Malozemoff <amaloz@galois.com>"]
+license = "MIT"
+readme = "README.md"
+edition = "2018"
+publish = false
 
 [dependencies]
-num-traits.workspace = true
-bytemuck.workspace = true
-subtle.workspace = true
+num-traits = "0.2.15"
+bytemuck = "1.12.3"
+subtle = "2.4.1"
 
 # NOTE: keep in sync with the cfg for the scalar backend in generated/implementation.rs
 [target.'cfg(not(all(target_arch = "x86_64",all(target_feature = "sse2",target_feature = "avx",target_feature = "sse4.1",target_feature = "avx2",target_feature = "aes",target_feature="sse4.2",target_feature="PCLMULQDQ"))))'.dependencies]
-aes.workspace = true
-lazy_static.workspace = true
+aes = "0.8.2"
+lazy_static = "1.4.0"
 
 [dev-dependencies]
-aes.workspace = true
-proptest.workspace = true
-lazy_static.workspace = true
+aes = "0.8.2"
+proptest = "1.0.0"
+lazy_static = "1.4.0"
